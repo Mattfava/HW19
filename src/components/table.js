@@ -11,7 +11,7 @@ function Table(props) {
     return (
         <div className="table">
             <table className="myTable">
-                    <th onclick="sortTable(0)">
+                    <th>
                         Name
                     </th>
                     <th>
