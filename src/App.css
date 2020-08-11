@@ -1,0 +1,25 @@
+.App{
+  text-align: center;
+}
+.table{
+  border: 1px solid black;
+  width: 100%;
+}
+.th{
+  width: 25%;
+  border-bottom: 1px solid black;
+}
+.td{
+  width: 25%;
+  padding: 5px;
+  border: 1px solid black;
+}
+.wrapper{
+  text-align: center;
+  margin: 10px;
+  width: 500px;
+
+}
+.h4{
+  text-align: center;
+}
