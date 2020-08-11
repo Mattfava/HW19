@@ -3,16 +3,16 @@ import "../App.css"
 function Row(props){
     return(
         <tr>
-            <td className = "td cell" >
+            <td className = "td" >
                 {props.name}
             </td>
-            <td className = "td cell">
+            <td className = "td2">
                 {props.title}
             </td>
-            <td className = "td cell">
+            <td className = "td">
                 {props.department}
             </td>
-            <td className = "td cell">
+            <td className = "td2">
                 {props.startDate}
             </td>
         </tr>

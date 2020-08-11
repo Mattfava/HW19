@@ -1,65 +1,30 @@
 import React from 'react';
 import Row from './row'
 import "../App.css"
-const employeeData = [
-    {
-        name: "Matt Huginbother",
-        title: "Accountant",
-        department: "Finance",
-        start_date: "07-12-2012"
-    },
-    {
-        name: "Jane Roe",
-        title: "Front End Developer",
-        department: "Development",
-        start_date: "05-31-2009"
-    },
-    {
-        name: "John Sage",
-        title: "Data Analyst",
-        department: "Data",
-        start_date: "10-23-2005"
-    }
-]
 
-function Table({ headings, handleSort }) {
+
+function Table(props) {
+    var filter = props.employeeData.filter((employeeData)=>
+    employeeData.name.toLowerCase().includes(props.search.toLowerCase())
+    );
+
     return (
         <div className="table">
-            <table
-            id="table">
-                    <thead>
-                    <tr>
-                     {headings.map(({name}) => {
-                        return(
-                            <th
-                            key={name}
-                            onClick={()=>{
-                            handleSort(name.toLowerCase())}}
-                            >                             
-                        {name}
-                        <div className="sorter">
-
-                        </div> 
-                        </th>
-                        );
-                })}
-                </tr>
-                </thead>
-                        {/* <button>Sort Up</button>
+            <table className="myTable">
+                    <th onclick="sortTable(0)">
+                        Name
                     </th>
                     <th>
                         Title
                      </th>
-                    <th filterkey="department">
+                    <th>
                         Department
                     </th>
-                    <th filterkey="startDate">
+                    <th>
                         Start Date
-                    </th> */}
-                {employeeData.map(employeeData => <Row name={employeeData.name} title={employeeData.title} department={employeeData.department} startDate={employeeData.start_date} />)}
-            {/* </table>
-        </div>
-    ) */}
+                    </th>
+                {filter.map(employeeData => <Row name={employeeData.name} title={employeeData.title} department={employeeData.department} startDate={employeeData.start_date} />)}
+            
     </table>
     </div>
 
